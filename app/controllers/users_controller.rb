@@ -40,9 +40,9 @@ class UsersController < ApplicationController
     redirect_to users_path #users_path is an alias to a route prefix defined in our routes
   end
 
-  private
+private
   def user_params
-    params.require(:user).permit(:name, :email, :password_digest)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end # of users_controller
