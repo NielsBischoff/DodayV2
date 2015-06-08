@@ -1,2 +1,8 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+
+<%#= @task.due %>
+
+<h1> <%= @task.name %> </h1>
+
+<h4> completed: <%= @task.urgent %> </h4>
+
+<%= link_to "edit", edit_task_path %>	

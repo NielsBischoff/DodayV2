@@ -2,7 +2,13 @@
 
 <p> Who let the douche out? </p>
 
-<%= link_to "Edit user info", edit_user_path %> 
-<%= link_to "Back to start page", users_path %>
+<div class="btn btn-info">
+	<%= link_to "Edit user info", edit_user_path %> 
+</div>
+<div class="btn btn-success">
+	<%= link_to "Back to users list", users_path %>
+</div>
 
-<%= link_to "Delete", user_path, method: :delete %>
+<div class="btn btn-danger">
+	<%= link_to "Delete", user_path, method: :delete %>
+</div>

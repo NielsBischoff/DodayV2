@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # we'll store the user's ID to make for a fast
       # User.find later on
       session[:user_id] = user.id.to_s
-      redirect_to users_path
+      redirect_to tasks_path
     else
       render :new
     end

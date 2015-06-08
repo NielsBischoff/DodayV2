@@ -1,9 +1,13 @@
 <!-- app/views/users/index.html.erb -->
 <h1>Tasks</h1>
+<br>
+<div class="btn btn-success">
+<%= link_to "New Task", new_task_path %>
+</div>
+<br/><br/><br/>
 <ul>
   <% @tasks.each do |task| %>
-    <li>task: <%= task.name %> | due: <%= task.due %><%= link_to "show", task_path(task) %></li>
-    <%= task.due %> 
+    <li> <%= link_to task.name, task_path(task) %> <%= link_to " ----- x", task_path(task), method: :delete %> </li>
 
 
   <% end %>

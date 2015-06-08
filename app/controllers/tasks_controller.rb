@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -21,12 +22,23 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id]) #look for a task
+
+    if @task.update_attributes(task_params) #and allow update of params
+      redirect_to task_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private
