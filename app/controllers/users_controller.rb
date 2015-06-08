@@ -14,8 +14,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id.to_s #creates a new user and in the same step initiates the session
       redirect_to users_path #users_path is an alias to a route prefix defined in our routes
-    else
+
+  else
       render :new #same as redirect_to new_user_path alias but conserves form data
     end
   end #of create
