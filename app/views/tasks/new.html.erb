@@ -1,0 +1,26 @@
+<!-- params.require(:task).permit(:task_name, :time_frame, :tag, :completed, :priority) -->
+
+<h1>Udate your task</h1>
+<%= form_for @task do |f| %>
+  <div>
+    <%= f.label :task_name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :time_frame %>
+    <%= f.text_field :time_frame %>
+  </div>
+
+  <div>
+    <%= f.label :tag %>
+    <%= f.tag :tag %>
+  </div>
+  <div>
+    <%= f.label :priority %>
+    <%= f.radio_button_tag(:priority, "yes") %>
+    <%= f.radio_button_tag(:priority, "no") %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
