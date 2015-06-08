@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   #users GET    /users(.:format)          users#index
-  # get 'users/' => 'users#index',    as: :users
+  # get 'users' => 'users#index',    as: :users
   # #POST   /users(.:format)          users#create
   # post 'users/' => 'users#create'
   # #new_user GET    /users/new(.:format)      users#new
@@ -55,9 +55,7 @@ Rails.application.routes.draw do
   #
   # #DELETE /users/:id(.:format)      users#destroy
   # delete 'users/:id' => 'users#destroy'
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-
-
+  # Example resource route (maps HTTP verbs to controller actions automatically)
   # Example resource route with options:
   #   resources :products do
   #     member do
