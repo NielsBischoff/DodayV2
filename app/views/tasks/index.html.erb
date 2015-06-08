@@ -1,0 +1,10 @@
+<!-- app/views/users/index.html.erb -->
+<h1>Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>task: <%= task.name %> | due: <%= task.due %><%= link_to "show", task_path(task) %></li>
+    <%= task.due %> 
+
+
+  <% end %>
+</ul>

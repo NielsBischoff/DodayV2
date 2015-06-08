@@ -1,9 +1,33 @@
 Rails.application.routes.draw do
+
+  # resources :users
+  # resources :tasks
+
   root 'users#index'
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+
+  get 'users/' => 'users#index', as: :users
+  get 'users/new' => 'users#new', as: :new_user
+  post 'users/' => 'users#create'
+  get 'users/:id' => 'users#show', as: :user
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
+  patch 'users/:id' => 'users#update'
+  delete 'users/:id' => 'users#destroy'
+
+  get 'tasks' => 'tasks#index', as: :tasks
+  get 'tasks/new' => 'tasks#new', as: :new_task
+  post 'tasks/' => 'tasks#create'
+  get 'tasks/:id' => 'tasks#show', as: :task
+  get 'tasks/:id/edit' => 'tasks#edit', as: :edit_task
+  patch 'tasks/:id' => 'tasks#update'
+  delete 'tasks/:id' => 'tasks#destroy'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -33,7 +57,7 @@ Rails.application.routes.draw do
   # delete 'users/:id' => 'users#destroy'
   # Example resource route (maps HTTP verbs to controller actions automatically):
 
-  resources :users
+
   # Example resource route with options:
   #   resources :products do
   #     member do
